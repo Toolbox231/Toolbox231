@@ -1,0 +1,226 @@
+local X1 = Instance.new("ScreenGui")
+local V1 = Instance.new('Frame', main)
+local S = Instance.new("ScreenGui")
+local main = Instance.new("Frame")
+local m1 = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local Open = Instance.new("TextButton")
+local Close = Instance.new("TextButton")
+local Title = Instance.new("TextLabel")
+local UICorner = Instance.new("UICorner")
+local UICorner2 = Instance.new("UICorner")
+local UICorner3 = Instance.new("UICorner")
+local UICorner4 = Instance.new("UICorner")
+local UICorner5 = Instance.new("UICorner")
+local UICorner6 = Instance.new("UICorner")
+local UICorner7 = Instance.new("UICorner")
+local UICorner8 = Instance.new("UICorner")
+local TeleportTB = Instance.new("TextBox")
+local TeleportButton = Instance.new("TextButton")
+local Right = Instance.new("TextButton")
+local Left = Instance.new("TextButton")
+
+
+--Gui--
+X1.Name = "X1"
+X1.Parent = game.CoreGui
+X1.ResetOnSpawn = false
+X1.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+S.Name = "S"
+S.Parent = game.CoreGui
+S.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+--Menu:
+main.Parent = X1
+main.AnchorPoint = Vector2.new(1, 0)
+main.Active = true
+main.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+main.Position = UDim2.new(0.65, 0, 0.13, 0)
+main.Size = UDim2.new(0, 180, 0, 150)
+main.Draggable = true
+
+m1.Parent = main
+m1.Active = true
+m1.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+m1.BackgroundTransparency = 1.000
+m1.Position = UDim2.new(1.2, 0, 0.5, 0)
+m1.Size = UDim2.new(0, 2, 0, 2)
+m1.Visible = false
+
+V1.Parent = S
+V1.AnchorPoint = Vector2.new(0.9, 0)
+V1.Active = true
+V1.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+V1.BackgroundTransparency = 1.000
+V1.Position = UDim2.new(0.997, 0, 0.13, 0)
+V1.Size = UDim2.new(0, 18, 0, 18)
+
+UICorner.Parent = main
+UICorner2.Parent = Open
+UICorner3.Parent = V1
+UICorner4.Parent = Close
+UICorner5.Parent = TeleportTB
+UICorner6.Parent = TeleportButton
+UICorner7.Parent = Right
+UICorner8.Parent = Left
+
+Open.Name = "Open"
+Open.Parent = V1
+Open.AnchorPoint = Vector2.new(0.9, 0)
+Open.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+Open.Position = UDim2.new(0.898, 0, 0.0325, 0)
+Open.Size = UDim2.new(0, 20, 0, 20)
+Open.Font = Enum.Font.SourceSans
+Open.Text = "+"
+Open.TextColor3 = Color3.fromRGB(0, 153, 0)
+Open.TextSize = 39.000
+Open.Visible = false
+Open.MouseButton1Down:Connect(function()
+main.Visible = true
+Open.Visible = false
+Close.Visible = true
+end)
+
+Close.Name = "Close"
+Close.Parent = V1
+Close.AnchorPoint = Vector2.new(0.9, 0)
+Close.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+Close.Position = UDim2.new(0.898, 0, 0.0325, 0)
+Close.Size = UDim2.new(0, 20, 0, 20)
+Close.Font = Enum.Font.SourceSans
+Close.Text = "-"
+Close.TextColor3 = Color3.fromRGB(255, 0, 0)
+Close.TextSize = 39.000
+Close.MouseButton1Down:Connect(function()
+main.Visible = false
+Close.Visible = false
+Open.Visible = true
+end)
+
+Right.Name = "Right"
+Right.Parent = main
+Right.AnchorPoint = Vector2.new(0.9, 0)
+Right.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+Right.Position = UDim2.new(0.93, 0, 0.0325, 0)
+Right.Size = UDim2.new(0, 18, 0, 18)
+Right.Font = Enum.Font.SourceSans
+Right.Text = ">"
+Right.TextColor3 = Color3.fromRGB(0, 153, 0)
+Right.TextSize = 39.000
+Right.MouseButton1Down:Connect(function()
+m1.Visible = true
+Right.Visible = false
+end)
+
+Left.Name = "Left"
+Left.Parent = m1
+Left.AnchorPoint = Vector2.new(0.9, 0)
+Left.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+Left.Position = UDim2.new(51, 0, -37, 0)
+Left.Size = UDim2.new(0, 18, 0, 18)
+Left.Font = Enum.Font.SourceSans
+Left.Text = "<"
+Left.TextColor3 = Color3.fromRGB(0, 153, 0)
+Left.TextSize = 39.000
+Left.MouseButton1Down:Connect(function()
+m1.Visible = false
+Right.Visible = true
+end)
+
+Title.Name = "Title"
+Title.Parent = main
+Title.BackgroundTransparency = 1.000
+Title.Position = UDim2.new(0.41, 0, 0.005, 0)
+Title.Size = UDim2.new(0.2, 0, 0.2, 0)
+Title.Font = Enum.Font.Cartoon
+Title.Text = "Teleport Gui "
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.TextSize = 17.000
+
+TeleportTB.Name = "TeleportTB"
+TeleportTB.Parent = main
+TeleportTB.AnchorPoint = Vector2.new(0.9, 0)
+TeleportTB.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+TeleportTB.Position = UDim2.new(0.89, 0, 0.20, 0)
+TeleportTB.Size = UDim2.new(0, 175, 0, 33)
+TeleportTB.Font = Enum.Font.SourceSans
+TeleportTB.Text = "Insert Name"
+TeleportTB.TextColor3 = Color3.fromRGB(255, 255, 255)
+TeleportTB.TextSize = 12.000
+
+TeleportButton.Name = "TeleportButton"
+TeleportButton.Parent = main
+TeleportButton.AnchorPoint = Vector2.new(0.9, 0)
+TeleportButton.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+TeleportButton.Position = UDim2.new(0.89, 0, 0.45, 0)
+TeleportButton.Size = UDim2.new(0, 175, 0, 33)
+TeleportButton.Font = Enum.Font.SourceSans
+TeleportButton.Text = "Teleport"
+TeleportButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+TeleportButton.TextSize = 12.000
+
+local ScrollingFrame = Instance.new("ScrollingFrame")
+ScrollingFrame.Name = "PlayerList"
+ScrollingFrame.Position = UDim2.new(0, -35, 0, -75)
+ScrollingFrame.Size = UDim2.new(0, 120, 0, 150)
+ScrollingFrame.BackgroundTransparency = 1
+ScrollingFrame.CanvasSize = UDim2.new(0, 0, 0, 0)
+ScrollingFrame.ScrollBarThickness = 10
+ScrollingFrame.Parent = m1
+ScrollingFrame.ScrollBarThickness = 0
+
+
+local function updatePlayerList()
+   -- удаляем все элементы TextButton в ScrollingFrame
+   for _, playerButton in pairs(ScrollingFrame:GetChildren()) do
+      if playerButton:IsA("TextButton") then
+         playerButton:Destroy()
+      end
+   end
+
+   -- создаем элементы TextButton для каждого игрока на сервере и добавляем в ScrollingFrame
+   local numPlayers = #game.Players:GetPlayers()
+   ScrollingFrame.CanvasSize = UDim2.new(0, 0, 0, 50 * numPlayers)
+   for i, player in ipairs(game.Players:GetPlayers()) do
+      local usernameButton = Instance.new("TextButton")
+      usernameButton.Name = player.Name .. "-Button"
+      usernameButton.Text = player.Name
+      usernameButton.Position = UDim2.new(0, 0, 0, 50 * (i - 1))
+      usernameButton.Size = UDim2.new(1, 0, 0, 50)
+      usernameButton.Font = Enum.Font.SourceSansBold
+      usernameButton.TextSize = 15
+      usernameButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+      usernameButton.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+      usernameButton.BorderColor3 = Color3.fromRGB(45, 45, 45)
+      usernameButton.BorderSizePixel = 2
+      usernameButton.Parent = ScrollingFrame
+      usernameButton.MouseButton1Click:Connect(function()
+   TeleportTB.Text = usernameButton.Text
+end)
+
+   end
+end
+
+-- подписываемся на события добавления и удаления игроков и вызываем функцию обновления списка
+game.Players.PlayerAdded:Connect(function(player)
+   updatePlayerList()
+end)
+
+game.Players.PlayerRemoving:Connect(function(player)
+   updatePlayerList()
+end)
+
+updatePlayerList()
+
+local function XYYM_fake_script() -- TeleportButton.LocalScript 
+	local script = Instance.new('LocalScript', TeleportButton)
+
+		script.Parent.MouseButton1Click:Connect(function()	
+		
+			local Victim = script.Parent.Parent.TeleportTB.Text
+			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[Victim].Character.HumanoidRootPart.CFrame 
+		
+		end)
+end
+coroutine.wrap(XYYM_fake_script)()
